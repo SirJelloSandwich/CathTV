@@ -703,6 +703,20 @@
 
   </script>
 
+    <!-- New Row Template  -->
+<script id="newRow" type="text/x-handlebars-template">
+  <div class="gridRowContainer">
+       <div class="rowTitle">CONTINUE WATCHING</div>
+       <div class="rowThumbnails">
+           {{#each items}}
+           <span class="thumbnail1">
+               <img src="{{plmedia$defaultThumbnailUrl}}" />
+               <div class="thumbnail1-title">Thumbnail Title</div>
+           </span>
+             {{/each}}
+       </div>
+    </div>
+</script>
   <!-- large 3D Shoveler View Template -->
   <script id="featured-3D-shoveler-template" type="text/x-handlebars-template">
 

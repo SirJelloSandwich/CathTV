@@ -109,7 +109,7 @@
 
       // Build the main content template and add it
 
-      var html = fireUtils.buildTemplate($("#featured-template"), {
+      var html = fireUtils.buildTemplate($("#newRow"), {
         items: this.rowData
       });
 
