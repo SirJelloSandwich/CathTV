@@ -1,0 +1,50 @@
+.app-top-bar {
+  position : absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 165px;
+  z-index: 8;
+  background: url('../assets/overhang_fhd.jpg') no-repeat left top;
+	font-size: 28px;
+}
+
+.app-logo {
+  position : absolute;
+  left: 90px;
+  top: 32px;
+  opacity: 1;
+}
+
+.menuBox1{
+	position: absolute;
+  left: 1400px;
+  top: 110px;
+  color: white;
+  font-weight: bold;
+
+}
+
+.menuBox2{
+	position: absolute;
+  left: 1650px;
+  top: 110px;
+  color: white;
+  font-weight: bold;
+}
+
+.menuBottomFocus{
+
+	  position: absolute;
+    width: 240px;
+    height: 8px;
+    background-color: white;
+    left: 1370px;
+    top: 157px;
+    -webkit-transform: translate3d(0px,0px,0px);
+    @include transition-property-transform-plus(opacity);
+    @include transition-duration(0.500s);
+    @include transition-timing-function(linear);
+    @include transform-origin(left center);
+    @include transition(all 500ms cubic-bezier(0.86, 0, 0.07, 1));
+}

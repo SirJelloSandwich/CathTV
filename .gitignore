@@ -1,0 +1,26 @@
+# ignore swap files
+*.swo
+*.swp
+
+.idea/
+
+# ignore OS X directory data
+.DS_store
+*.DS_Store
+*/.DS_Store
+
+# ignore SASS cache
+.sass-cache/*
+
+# ignore local development libraries
+node_modules
+
+# ignore generated zip for FireTV deployment
+*.zip
+
+# ignore dir generated while creating production builds
+build/
+
+# ignore dir+file generated while creating dev builds
+dev/
+

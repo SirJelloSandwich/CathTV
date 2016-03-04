@@ -1,0 +1,143 @@
+.gridWrapper{
+  
+  position: absolute;
+  width:1740px;
+  height: 2000px;
+  top:248px;
+  left:120px;
+  overflow:hidden;
+ 
+
+}
+
+.OLDmoveableGridInternalContainer{
+  margin-top: 0px;
+
+}
+.moveableGridInternalContainer {
+  
+  transform: translate3d(0px,0px,0px);
+  @include transition-property-transform-plus(opacity);
+  @include transition-duration(0.500s);
+  @include transition-timing-function(linear);
+  @include transform-origin(left center);
+  @include transition(all 500ms cubic-bezier(0.86, 0, 0.07, 1));
+}
+
+.thumbnailContainer{
+
+  
+  display: inline-block;
+  margin-right: 20px;
+  width: 320px;
+  height: 574px;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+.thumbnail{
+
+  width: 325px;
+  height: 480px;
+ 
+ 
+
+}
+
+.thumbnailVideoTitle{
+  color: white;
+  position: relative;
+  left: 10px;
+  font-size: 24px;
+  font-family: Roman;
+  color: #ebebeb;  
+  line-height: 28px;
+}
+
+.innerThumbnailContainer{
+
+ width: 325px;
+  height: 480px;
+  text-align: center;
+  background-color: black;
+}
+
+
+
+.removedFromWatchlist{
+  
+  display: inline-block;
+  top:0px; 
+  width:325px; 
+  height:480px; 
+  color: #000000;
+  opacity: 0.2;
+
+}
+
+.inside{
+  position: relative;
+  z-index: 100;
+  color: #808080;
+  line-height: 36px;
+  font-size: 32px;
+  font-family: Roman;
+  top:-300px;
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.watchlistIcon{
+  position: relative;
+  display: inline-block;
+  top: 15px;
+   background: url('../assets/icon_watchlist_fhd.png') left center no-repeat;
+   width: 40px;
+   height: 40px;
+
+}
+
+.watchlistPageTitle{
+  display: inline-block;
+  z-index: 200;
+  top: 185px;
+  left: 128px;
+  font-size: 32px;
+  font-weight: bold;  
+  color: #ebebeb;
+  position: relative;
+  width: 300px;
+  height:50px;
+
+}
+
+.watchlistNumber1{
+  display: inline-block;
+  z-index: 200;
+  top: 215px;
+  right: 142px;
+  font-size: 26px;
+  font-weight: bold;  
+  color: #ffffff;
+  position: absolute;
+  width: 30px;
+  height:50px;
+  text-align: right;
+
+}
+
+.watchlistNumber2{
+  display: inline-block;
+  z-index: 200;
+  top: 215px;
+  right: 80px;
+  font-size: 26px;
+  font-family: Roman;  
+  color: #ffffff;
+  position: absolute;
+  width: 50px;
+  height:50px;
+
+}

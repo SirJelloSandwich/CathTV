@@ -1,0 +1,115 @@
+// * {
+// 	font-family: "helvetica", arial, sans-serif;
+// 	font-weight: 300;
+// }
+ // html {
+ // margin: 0;
+ // background-color: #000;
+ // }
+#screen1080 {
+	position: relative;
+	width: 1920px;
+	height: 1080px;
+	background: url(../images/flicast-bg-1080.jpg) left top no-repeat;
+	/* background: url(../images/flicast-keyboard-login-1080.jpg) left top no-repeat; */
+	border: 1px solid black;
+}
+
+#overhang {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1920px;
+	height: 165px;
+	background: url(../images/flicast_logo_main.png) 120px 57px no-repeat;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.keyboard {
+	position: absolute;
+	top: 195px;
+	left: 120px;
+}
+
+.keyboardRow {
+	display: block;
+	text-align: left;
+	margin: 0px;
+}
+.keyboardRow:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.key {
+	position: relative;
+	float: left;
+	display: inline-block;
+	margin: 0px 6px 6px 0px;
+	width: 90px;
+	height: 90px;
+	font-size: 54px;
+	line-height: 90px;
+	color: #ebebeb;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contents-2 {
+	display: none;
+}
+
+.k-lg {
+	width: 186px;
+	font-size: 39px;
+	margin: 0px 0px 0px 20px;
+}
+
+.f24 {
+	font-size: 24px;
+	margin: 0px 0px 0px 20px;
+}
+
+.base-key {
+	margin: 20px 6px 0px 0px;
+}
+.submit {
+	margin: 20px 6px 0px 20px;
+	background-color: #1a80aa;
+}
+
+#delete {
+	background-image: url(../images/icon_delete_lg.png);
+	background-repeat: no-repeat;
+	background-position: center 8px;
+}
+#space {
+	background-image: url(../images/icon_space_lg.png);
+	background-repeat: no-repeat;
+	background-position: center 8px;
+}
+span.icon {
+	display: inline-block;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 25px;
+	height: 25px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	opacity: 0.4;
+}
+#delete span.icon {
+	background-image: url(../images/icon_replay_sm.png);
+}
+#letter-case span.icon {
+	background-image: url(../images/icon_asterisk_sm.png);
+}
+
+.key-active {
+	outline: 6px solid #ff6600;
+}

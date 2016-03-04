@@ -1,0 +1,625 @@
+/**
+ * All of the common css rules for the entire template.
+ */
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow : hidden;
+}
+
+body {
+  position : absolute;
+  padding: 0;
+  margin: 0;
+  font-family : 'Roboto', serif;
+  background: $color-app-base-bg $img-app-background no-repeat left top;
+  background-size : 100% 100%;
+}
+
+video::cue {
+   color: #ffffff;
+}
+
+video::-webkit-media-text-track-container {
+  position: relative;
+  top: -100px;
+}
+
+div.srt{
+  position: relative;
+  top: -200px;
+  font-size: 32px;
+  text-align: center;
+}
+
+
+.fixedFocusBorder{
+  display: none;
+  position: absolute;
+  top:205px;
+  left: 548px;
+  outline: 8px solid #ba3a23;
+  outline-offset: 0px;
+  height: 464px;
+  width : 825px;
+  z-index: 1000;
+   -webkit-transform: translate3d(0px,0px,0px);
+    @include transition-property-transform-plus(opacity);
+    @include transition-duration(0.500s);
+    @include transition-timing-function(ease);
+    @include transform-origin(left center);
+    @include transition(all 500ms cubic-bezier(0.86, 0, 0.07, 1));
+}
+
+.modal-dialog {
+  z-index: 650;
+  background-color: #242527;
+  color: #dadada;
+  position: absolute;
+  left: 515px;
+  top: 30%;
+  width: 890px;
+  min-height: 500px;
+  padding: 60px; }
+  .modal-dialog .dialog-title {
+    margin-bottom: 30px;
+    font-size: 48pt;
+    font-family: "Helvetica Neue Medium", "HelveticaNeue-Medium", Helvetica, Arial, sans-serif; }
+  .modal-dialog .dialog-message {
+    margin-bottom: 60px;
+    font-size: 36pt; }
+  .modal-dialog .dialog-buttons-container {
+    justify-content: center;
+    display: flex; }
+
+/*Application Styles*/
+
+.continueWatchingOverlay{
+
+  position : absolute;
+  top      : 0px;
+  width    : 100%;
+  height   : 100%;
+  z-index  : 500;
+  background-color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+
+}
+
+.continue-watching-items{
+
+  width: 50%;
+  margin: 484px auto 0px auto;
+
+}
+
+.continueWatchingText{
+
+  font-size: 36px ;
+  font-weight:bold;
+  color:#ffffff;
+  line-height: 40px;
+  margin-bottom: 40px;
+
+}
+
+.continueButton{
+
+  font-size: 30px;
+  font-family:Roman;
+  color:#ffffff;
+  background-color: #ff6600;
+  width: 400px;
+  height: 54px;
+  margin: 5px auto;
+  padding-top: 10px;
+
+}
+
+.restartButton{
+
+  font-size: 30px;
+  font-family:Roman;
+  color:#ffffff;
+  background-color: #333333;
+  width: 400px;
+  height: 54px;
+  margin: 5px auto;
+  padding-top: 10px;
+
+}
+
+
+
+.genericButton {
+  position: relative;
+  float: left;
+  display: inline-block;
+  margin-right: 16px;
+  width: 264px;
+  height: 120px;
+  color: #ebebeb;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.genericButtonIcon{
+  margin-top: 40px;
+
+}
+
+.genericButtonText{
+  font-size: 26px;
+  font-family:Roman;
+  color:#ebebeb;
+  margin-top: 10px;
+  margin-bottom: 0px;
+
+}
+
+.focusBorder{
+    display: none;
+    outline: 8px solid #ba3a23;
+    outline-offset: 0px;
+    z-index:600;
+    position: absolute;
+    top: 501px;
+    left: 650px;
+    width: 260px;
+    height: 120px;
+    -webkit-transform: translate3d(0px,0px,0px);
+    @include transition-duration(0.500s);
+    @include transition-timing-function(linear);
+    @include transform-origin(left center);
+    @include transition(all 500ms cubic-bezier(0.86, 0, 0.07, 1));
+
+}
+
+.app-main-container {
+  position : relative;
+  // width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+  z-index: 600;
+  font-family: 'Roboto', serif;
+}
+
+
+
+/*//
+// Full Row View
+//*/
+.one-d-no-items-container {
+  position : absolute;
+  display  : none;
+  top      : 300px;
+  left     : 200px;
+  color    : $color-title-text;
+  font-size: 3em;
+}
+
+.one-D-details-container {
+  position : absolute;
+  top    : 0;
+  left   : 0;
+  width  : 100%;
+  height : 100%;
+  @include transition-property(visibility);
+  @include transition-duration($ani-duration-maincontent-opacity);
+  @include transition-timing-function(linear);
+}
+
+.subcategory-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include transition-property(opacity);
+  @include transition-duration($ani-duration-maincontent-opacity);
+  @include transition-timing-function(linear);
+}
+
+
+
+.detail-row-container-buttons {
+  height : 75px;
+  margin : 20px 0;
+}
+
+.detail-item-button {
+  position : relative;
+  width    : 315px;
+  height   : 73px;
+  padding  : 15px;
+  float    : left;
+  font-size    : 1.4em;
+  margin-right : 20px;
+  text-align   : center;
+  border       : 1px solid transparent;
+}
+
+.detail-item-button-selected {
+  @extend .detail-item-button;
+  overflow   : hidden;
+  margin-top : 0px;
+  color            : $color-btn-selected-text;
+  background-color : $color-btn-selected-bg;
+  border: solid;
+  border-color: $color-app-dialog-head-border;
+  border-width: 1px;
+  @include box-shadow(0px 10px 18px 3px $color-box-shadow);
+}
+
+.detail-item-button-static{
+  @extend .detail-item-button;
+  color      : $color-btn-text;
+  background-color : $color-btn-bg;
+  line-height: 45px;
+}
+
+#landingPage-one-D-shoveler-container {
+
+  position : absolute;
+  top      : 600px;
+  left     : 0px;
+  width    : 100%;
+  height   : 380px;
+  z-index  : 20;
+  @include transform(translateZ(0));
+  @include transition-property-transform-plus(opacity);
+  @include transition-property-transform-plus(visibility);
+  @include transition-duration(1s);
+  @include transition-timing-function(linear);
+}
+
+#one-D-shoveler-container {
+
+  position : absolute;
+  top      : 290px;
+  left     : 0px;
+  width    : 100%;
+  height   : 380px;
+  z-index  : 20;
+  @include transform(translateZ(0));
+  @include transition-property-transform-plus(opacity);
+  @include transition-property-transform-plus(visibility);
+  @include transition-duration(1s);
+  @include transition-timing-function(linear);
+}
+
+
+
+/*//
+// Player View
+//*/
+
+
+.player-content-video {
+  position : absolute;
+  width    : 100%;
+  height   : 100%;
+  background: black;
+}
+
+.player-controls-container {
+  position : absolute;
+  width    : 100%;
+  height   : 30%;
+  padding  : 0 8%;
+  bottom   : 0;
+  opacity  : 0;
+  background-color : $color-player-controls-bg;
+  @include transition(0.5s);
+  z-index: 100;
+}
+
+.player-controls-timeline-container {
+  position   : relative;
+  height     : 10px;
+  margin-top : 20px;
+}
+
+.player-controls-timeline {
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  width    : 100%;
+  height   : 100%;
+  border           : 1px solid $color-timeline-border;
+  border-radius    : 6px;
+  background-color : $color-timeline-bg;
+}
+
+.player-controls-timeline-playhead {
+  position : absolute;
+  width  : 0%;
+  height : 10px;
+  border : 1px solid $color-playhead-border;
+  margin-top       : -1px;
+  border-radius    : 6px;
+  background-color : $color-playhead-bg;
+}
+
+.player-controls-skip-indicator {
+  position : absolute;
+  height   : 100px;
+  top      : -100px;
+  left     : 60px;
+  font-size      : 1.8em;
+  color          : $color-meta-primary-text;
+  display        : flex;
+  background-size : 100% 100%;
+  //background-image: $img-skip-indicator;
+  min-width: 200px;
+  margin-left: -20px;
+  transition: 0.05s;
+
+
+  img {
+    height : 22px;
+    width  : 30px;
+    margin-left : 25px;
+    margin-top  : 30px;
+  }
+
+  .player-controls-skip-symbol {
+    margin-left : 15px;
+    margin-top  : 15px;
+  }
+
+  .player-controls-skip-number {
+    margin-top  : 15px;
+    font-weight : bold;
+  }
+
+  .player-controls-skip-text {
+    margin-top  : 16px;
+    margin-left : 5px;
+    margin-right: 20px;
+    font-weight : lighter;
+  }
+}
+
+#forward-indicator {
+  display : none;
+}
+
+#rewind-indicator {
+  display : none;
+}
+
+.player-controls-timestamp {
+  margin-top  : 10px;
+  font-size        : 1.6em;
+}
+
+.player-controls-timestamp-curtime {
+  @extend .player-controls-timestamp;
+  color   : $color-meta-primary-text;
+  display : inline-block;
+  float   : left;
+}
+
+.player-controls-timestamp-totaltime {
+  @extend .player-controls-timestamp;
+  color   : $color-meta-secondary-text;
+  display : inline-block;
+  float   : right;
+}
+
+.player-controls-button-back {
+  display : none;
+}
+
+.player-controls-content-subtitle {
+  position : absolute;
+  top      : 170px;
+  width    : 60%;
+  height   : 72px;
+  color    : $color-description-text;
+  font-style: italic;
+  font-size: 1.1em;
+  @include display-box;
+  @include box-orient(vertical);
+  @include line-clamp(2);
+}
+
+.player-pause-button {
+  position   : absolute;
+  top        : 250px;
+  left       : 870px;
+  height     : 200px;
+  width      : 200px;
+  opacity    : 0;
+}
+
+/*//
+// Next Video View
+//*/
+.next-video-main-container {
+  position : absolute;
+  height   : 100%;
+  width    : 30%;
+  right    : 0;
+  display  : flex;
+  color    : $color-meta-secondary-text;
+  background-color : $color-player-controls-bg;
+  flex-direction : column;
+}
+
+.next-video-text {
+  margin-top : 60px;
+  margin-left: 50px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: $color-meta-primary-text;
+}
+
+.next-video-thumbnail {
+  height: 250px;
+  max-width: 425px;
+  margin-left: 50px;
+  margin-top: 30px;
+  width: auto;
+  img {
+    width : 100%;
+    height: 100%;
+    border: solid 1px $color-thumbnail-border;
+  }
+}
+
+.next-video-thumbnail:after {
+  position : relative;
+  top      : -250px;
+  height   : 100%;
+  width    : 100%;
+  z-index  : 90;
+  content  : " ";
+  display  : block;
+  background-position : center;
+  background-repeat   : no-repeat;
+  //background-image    : $img-nextvideo-preview-play;
+}
+
+.next-video-playingtext {
+  margin-left : 50px;
+  margin-top  : 15px;
+}
+
+.next-video-title {
+  margin-left : 50px;
+  margin-top  : 30px;
+  color       : $color-title-text;
+  font-weight : lighter;
+  font-size       : 2.5em;
+  line-height: 1;
+}
+
+.next-video-description {
+  margin-top  : 30px;
+  margin-left : 50px;
+  overflow    : hidden;
+  font-size   :  1.1em;
+  color: $color-description-text;
+  text-overflow : ellipsis;
+  display       : -webkit-box;
+  @include line-clamp(5);
+  @include box-orient(vertical)
+}
+
+/*//
+// Overlay and Spinner
+//*/
+.app-overlay-container {
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  width    : 100%;
+  height   : 100%;
+  z-index  : 600;
+  background: $img-overlay no-repeat left top;
+  background-size: 100% 100%;
+}
+
+.black-app-overlay-container {
+  display: none;
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  width    : 100%;
+  height   : 100%;
+  z-index  : 600;
+  background: #000000 no-repeat left top;
+  background-size: 100% 100%;
+}
+
+.app-overlay-message {
+  color      : $color-overlay-text;
+  text-align : center;
+  margin-top : 25%;
+}
+
+.content-load-spinner {
+  display: none;
+  margin: 6em auto;
+  font-size: 10px;
+  position: absolute;
+  top: 425px;
+  left: 885px;
+  z-index: 1000;
+  text-indent: -9999em;
+  border-top: 1.2em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.2em solid #ffffff;
+  border-bottom: 1.2em solid #ffffff;
+  border-left: 1.2em solid #ffffff;
+  @include spinneranimation(spin 1.3s infinite linear);
+}
+
+.splashscreen-load-spinner {
+  margin: 6em auto;
+  font-size: 10px;
+  position: absolute;
+  top: 700px;
+  left: 885px;
+  z-index: 1000;
+  text-indent: -9999em;
+  border-top: 1.2em solid rgba(40, 89, 169, 0.2);
+  border-right: 1.2em solid #2859ad;
+  border-bottom: 1.2em solid #2859ad;
+  border-left: 1.2em solid #2859ad;
+  @include spinneranimation(spin 1.3s infinite linear);
+}
+
+.content-load-spinner,
+.content-load-spinner:after {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.splashscreen-load-spinner,
+.splashscreen-load-spinner:after {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+@keyframes spin {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+
+
+/*//Media queries for tablets
+//*/
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+  .player-controls-button-back {
+    position: absolute;
+    display : block;
+    float   : left;
+    top     : 10px;
+    left    : 30px;
+  }
+
+  .detail-row-container-buttons {
+    bottom : 10px;
+  }
+}

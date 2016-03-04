@@ -1,0 +1,26 @@
+.fliModalError {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 601;
+}
+.fliInnerModalError {
+  position: relative;
+  height: 30%;
+  width: 50%;
+  background: #2b59a9;
+  top: 35%;
+  left: 25%;
+  color: #ebebeb;
+  font-size: 32px;
+  line-height: 10;
+  text-align: center;
+}
+.fliInnerModalError > div {
+  position: relative;
+  top: 100px;
+  line-height: 2;
+}

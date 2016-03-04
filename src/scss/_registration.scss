@@ -1,0 +1,61 @@
+.createAnAccountText{
+	/*display: inline-block;*/
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	left:10%;
+	top:195px;
+	color: white;
+}
+
+.createAccountTitle{
+
+	font-size: 32px;
+	line-height: 36px;
+	 font-family:Bold;
+	 color: #ffffff;
+
+}
+
+.createAccountBody{
+
+	font-size: 32px;
+	line-height: 36px;
+	 font-family:Roman;
+	 color: #ffffff;
+
+
+}
+
+.regEmailInput{
+
+	/*display: inline-block;*/
+	position: absolute;
+	width: 650px;
+	height: 75px;
+	left: 760px;
+	top:295px;
+	font-size: 40px;
+
+}
+
+.regEmailText{
+	position: absolute;
+	color: white;
+	font-size: 40px;
+	left: 760px;
+	top:200px;
+}
+
+.regPasswordInput{
+	position: absolute;
+	margin-top: 20px;
+	width: 650px;
+	height: 75px;
+	left: 760px;
+	top:295px;
+	font-size: 40px;
+}
+#regPassword{
+	display:none;
+}

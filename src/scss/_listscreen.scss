@@ -1,0 +1,67 @@
+.listscreenMain{
+	
+}
+
+.listscreenLogo{
+
+	background: url("../assets/large_logo_fhd.png") no-repeat center top;
+    width: 422px;
+    height: 131px;
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
+}
+
+.listscreenLeft{
+
+	position: absolute;
+    background-color: rebeccapurple;
+    height: 700px;
+    width: 600px;
+    top: 300px;
+    left: 350px;
+	
+}
+
+.listscreenLeftOverlay{
+	    background: rgba(0,0,0,0.4);
+    height: 150px;
+    position: relative;
+    top: 550px;
+}
+
+.listscreenLeftOverlayText{
+	color: white;
+    font-size: 48px;
+    text-align: center;
+    line-height: 150px;
+	
+}
+	
+
+.listscreenRight{
+
+	position: absolute;
+    background-color: red;
+    height: 700px;
+    width: 600px;
+    top: 300px;
+    left: 1000px;
+	
+}
+
+.listscreenRightOverlay{
+	background: rgba(0,0,0,0.4);
+    height: 150px;
+    position: relative;
+    top: 550px;
+}
+	
+
+
+.listscreenRightOverlayText{
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    line-height: 150px;
+}

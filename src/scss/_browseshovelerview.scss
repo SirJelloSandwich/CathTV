@@ -1,0 +1,151 @@
+.browseRowIndex {
+  right: 70px;
+  font-size: 26px;
+  color: #333333;
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  text-align: right;
+  top: 10px;
+}
+.browseRowTotal {
+  right: 10px;
+  font-size: 26px;
+  color: #333333;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+}
+.browseDuration {
+  opacity: 1;
+  color: white;
+  position: relative;
+  top: -45px;
+  left: 295px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100px;
+  text-align: center;
+  z-index: 1000;
+  font-size: 26px;
+  height: 42px;
+  line-height: 42px;
+}
+.browseShovelerMovieTitle {
+  position: relative;
+  font-size: 26px;
+  line-height: 30px;
+  color: #333333;
+  width: 398px;
+  top: -30px;
+}
+.browseProgressOnImage {
+  position: absolute;
+  height: 8px;
+  background-color: #1a80aa;
+  top: 454px;
+}
+.browseBlackProgressOnImage {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  background-color: #000000;
+  top: 454px;
+}
+.browseShovelerMovieStars {
+  position: relative;
+  background-image: url(../assets/stars_3_fhd.png);
+  width: 170px;
+  height: 40px;
+  left: -10px;
+  top: 10px;
+}
+.largeBrowseContainer {
+  //margin-top: 175px;
+  // overflow: hidden;
+  position: relative;
+  top: 205px;
+
+}
+.OLDinnerLargeBrowseContainer {
+  overflow: hidden;
+  margin-top: 0;
+}
+.innerLargeBrowseContainer {
+
+  -webkit-transform: translate3d(0px,0px,0px);
+  @include transition-property-transform-plus(opacity);
+  @include transition-duration(0.500s);
+  @include transition-timing-function(linear);
+  @include transform-origin(left center);
+  @include transition(all 500ms cubic-bezier(0.86, 0, 0.07, 1));
+}
+.browseRowTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 32px;
+  font-weight: bold;
+}
+.browse-shoveler-full-img {
+  width: 398px;
+  height: 224px;
+}
+/*/
+/// Shoveler View
+//*/
+.browseShovelerParent {
+  position: relative;
+  width: 1820px;
+  height: 448px;
+  top: 30px;
+}
+.browseShovelerLeft {
+  background-image: url(../assets/icon_40_arrowleft_fhd.png);
+  width: 40px;
+  height: 40px;
+  top: 145px;
+  position: relative;
+  left: 55px;
+  opacity: 0;
+}
+.browseShovelerRight {
+  background-image: url(../assets/icon_40_arrowright_fhd.png);
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 105px;
+  left: 1820px;
+  opacity: 0.3;
+}
+.browse-shoveler-dynamic-row-container {
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  left: 200px;
+  overflow: hidden;
+  @include transition-property-transform;
+  @include transition-duration(1s);
+  @include transform(translateX(0));
+  @include transition-timing-function(linear);
+}
+.browse-shoveler-row-container {
+  height: 410px;
+  margin-left: $pos-left-content-position;
+  overflow: hidden;
+  @include transform-style(preserve-3d);
+  position: relative;
+  top: -80px;
+
+}
+.browse-shoveler-rowitem-static {
+  position: absolute;
+
+  -webkit-transform: translate3d(0px,0px,0px);
+  @include transition-property-transform-plus(opacity);
+  @include transition-duration(0.250s);
+  @include transition-timing-function(linear);
+  @include transform-origin(left center);
+  @include transition(all 250ms cubic-bezier(0.86, 0, 0.07, 1));
+}
+.browse-shoveler-rowitem-selected {}

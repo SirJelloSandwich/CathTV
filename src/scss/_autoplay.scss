@@ -1,0 +1,188 @@
+.autoplayContainer{
+	position: absolute;
+	margin-top:195px;
+	overflow: hidden;
+	z-index: 1;
+	
+
+}
+.OLDinnerSpringBoardContainer{
+	overflow: hidden;
+	margin-top: 0px;
+
+}
+
+
+.innerAutoplayContainer{
+	transform: translate3d(0px,0px,0px);
+	@include transition-property-transform-plus(opacity);
+	@include transition-duration(0.25s);
+	@include transition-timing-function(linear);
+	@include transform-origin(left center);
+	@include transition(all 250ms cubic-bezier(0.755, 0.050, 0.855, 0.060));
+}
+
+
+.autoplayButton{
+ position: relative;
+  float: left;
+  display: inline-block;  
+  margin-right: 16px;
+  width: 264px;
+  height: 120px;  
+  color: #ebebeb;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  
+}
+
+.framerMovieTitle{
+	position: absolute;
+	color: #ebebeb;
+	font-size: 24px;
+	left: 300px;
+	top: 325px;
+
+}
+
+.autoplayThumbPic{
+	width: 100%;
+	height: 100%;
+}
+
+.autoplayButtonIcon{
+  margin-top: 20px;
+  width:40px;
+  height: 40px;
+
+}
+.playNextCounter{
+  position: relative;  
+  margin: 20px 0px 0px 0px;
+  width:100%;
+  height: 40px;
+  color: white;
+  font-size :32px;
+
+}
+
+.autoplayCounter{
+  margin-top: 20px;
+  width: 54px;
+  height: 54px;
+
+}
+
+.autoplayButtonText{
+  font-size: 26px;
+  font-family:Roman;
+  color:#ebebeb;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  
+}
+
+.autoplayRow{
+	position: absolute;
+	display: inline-block;
+	text-align: left;
+	margin: 0px;
+	bottom: 0px;
+	top:377px;
+}
+
+.autoplayStarRating{
+	top: 10px;
+	position: relative;
+	display: inline-block;
+}
+
+.autoplayRatingEtc{
+	font-size: 24px ;
+	font-family:Roman;
+	color:#ebebeb;
+	line-height: 32px;
+}
+.autoplayDescription{
+	font-size: 26px ;
+	font-family:Roman;
+	color:#ebebeb;
+	line-height: 32px;
+}
+
+#autoplayPage{
+	
+	position: relative;
+	width:1920px;
+	height: 530px;
+	
+	margin-bottom: 60px;
+}
+
+.mainAutoplayPic{
+	position: absolute;
+	
+	width: 333px;
+    height: 495px;
+    left:31%;
+	top:40px;
+   
+}
+
+/*.autoplayButtons{
+	width:264px;
+	height: 120px;
+	
+}
+*/
+.autoplayButtonPadding{
+
+	margin: 16px;
+	
+}
+
+.autoplayMainTitle{
+	font-size: 42px ;
+	font-weight:bold;
+
+	color:#ebebeb;	
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.autoplayData{
+	position: absolute;	
+	
+	right: 120px;
+	top:40px;
+	height: 495px;
+	width:44%;
+}
+.autoplayLower{
+	position: absolute;
+	position: fixed;	
+	width:320px;
+	height:474px;
+	bottom: 0%;
+	top:820px;
+	left:120px;
+	color: white;
+}
+
+.nextVideoText{
+	position: absolute;
+	left:31%;
+	font-size: 24px ;
+	font-family:Roman;
+	color:#ebebeb;
+}
+
+.currentVideoText{
+	position: absolute;
+	left:120px;
+	font-size: 24px ;
+	font-family:Roman;
+	color:#ebebeb;
+}
+
+

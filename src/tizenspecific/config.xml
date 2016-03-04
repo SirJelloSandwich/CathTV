@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/sample" version="1.0.0" viewmodes="maximized">
+    <access origin="http://roku.hopetv.org" subdomains="true"/>
+    <access origin="http://127.0.0.1" subdomains="true"/>
+    <access origin="http://v2v.cc" subdomains="true"/>
+    <access origin="http://clips.vorwaerts-gmbh.de" subdomains="true"/>
+    <tizen:application id="hZISgtgEAE.sample" package="hZISgtgEAE" required_version="2.3"/>
+    <content src="index.html"/>
+    <!-- <tizen:content-security-policy>script-src 'self'</tizen:content-security-policy> -->
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <icon src="assets/icon.png"/>
+    <name>FliCastCore</name>
+    <tizen:privilege name="http://developer.samsung.com/privilege/adstreamingfw"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/allshare"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/avplay"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/epg"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/sso.public"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/widgetdata"/>
+    <tizen:privilege name="http://tizen.org/privilege/account.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/account.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/alarm"/>
+    <tizen:privilege name="http://tizen.org/privilege/allshare"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.info"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/bluetooth.admin"/>
+    <tizen:privilege name="http://tizen.org/privilege/bluetooth.gap"/>
+    <tizen:privilege name="http://tizen.org/privilege/bluetooth.health"/>
+    <tizen:privilege name="http://tizen.org/privilege/bluetooth.spp"/>
+    <tizen:privilege name="http://tizen.org/privilege/calendar.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/calendar.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/callhistory.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/callhistory.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/content.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/content.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/contentmanager.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/datacontrol.consumer"/>
+    <tizen:privilege name="http://tizen.org/privilege/datasync"/>
+    <tizen:privilege name="http://tizen.org/privilege/download"/>
+    <tizen:privilege name="http://tizen.org/privilege/externalNetworkAccess"/>
+    <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/filesystem.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/log"/>
+    <tizen:privilege name="http://tizen.org/privilege/messaging.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/messaging.send"/>
+    <tizen:privilege name="http://tizen.org/privilege/messaging.write"/>
+    <tizen:privilege name="http://tizen.org/privilege/nfc.admin"/>
+    <tizen:privilege name="http://tizen.org/privilege/nfc.cardemulation"/>
+    <tizen:privilege name="http://tizen.org/privilege/nfc.common"/>
+    <tizen:privilege name="http://tizen.org/privilege/nfc.p2p"/>
+    <tizen:privilege name="http://tizen.org/privilege/nfc.tag"/>
+    <tizen:privilege name="http://tizen.org/privilege/notification"/>
+    <tizen:privilege name="http://tizen.org/privilege/package.info"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:privilege name="http://tizen.org/privilege/push"/>
+    <tizen:privilege name="http://tizen.org/privilege/se"/>
+    <tizen:privilege name="http://tizen.org/privilege/secureelement"/>
+    <tizen:privilege name="http://tizen.org/privilege/setting"/>
+    <tizen:privilege name="http://tizen.org/privilege/system"/>
+    <tizen:privilege name="http://tizen.org/privilege/time"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.audio"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.channel"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.display"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.window"/>
+    <tizen:privilege name="http://tizen.org/privilege/websetting"/>
+    <tizen:profile name="tv"/>
+</widget>

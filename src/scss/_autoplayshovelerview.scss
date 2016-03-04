@@ -1,0 +1,138 @@
+.autoplayRowIndex{
+  
+  right: 180px;
+  font-size: 26px;
+  font-weight: bold;  
+  color: #ffffff;
+  position: absolute;
+  width: 30px;
+  height:50px;
+  text-align: right;
+  top: 30px;
+
+}
+
+.autoplayRowTotal{ 
+  
+  right: 125px;
+  font-size: 26px;
+  font-family: Roman;  
+  color: #ffffff;
+  position: absolute;
+  width: 50px;
+  height:50px;
+  top: 30px;
+
+}
+
+.autoplayShovelerMovieTitle{
+  color: white;
+  position: relative;
+  top: 10px;
+  font-size: 24px;
+  font-family: Roman;
+  color: #ebebeb;  
+  line-height: 28px;
+
+}
+
+.autoplayShovelerMovieStars{
+  position: relative;
+  background-image: url('../assets/stars_3_fhd.png');
+  width: 170px;
+  height: 40px;
+  left: -10px;
+  top: 10px;
+}
+
+
+.autoplayRowTitle{
+	margin-top: 0px;
+	margin-bottom: 20px;
+	color: white;
+	font-size: 42px ;
+	font-weight:bold;
+	
+}
+
+/*//
+// Shoveler View
+//*/
+
+.autoplayShovelerParent{
+position: relative;
+  
+}
+
+.autoplayShovelerLeft{
+  background-image: url('../assets/icon_arrowleft_fhd.png');
+  width: 40px;
+  height: 40px;
+  top: 280px;
+  position: relative;
+  left: 60px;
+  opacity: 0;
+}
+
+.autoplayShovelerRight{
+   background-image: url('../assets/icon_arrowright_fhd.png');
+  width: 40px;
+  height: 40px;  
+  position: relative;
+  top: 240px;
+  left: 1800px;
+
+}
+.autoplay-shoveler-dynamic-row-container {
+  
+  position : absolute;
+  width    : 1000%;
+  height   : 100%;
+  left     : 200px;
+  overflow : hidden;
+  @include transition-property-transform;
+  @include transition-duration(1s);
+  @include transform(translateX(0));
+  @include transition-timing-function(linear);
+}
+
+.autoplay-shoveler-row-container {
+ 
+  width  : 1680px;
+  height : 615px; 
+ margin-left     : $pos-left-content-position;
+  overflow : hidden;
+  @include transform-style(preserve-3d);
+  position: relative;
+  top: -80px;
+}
+
+
+
+.autoplay-shoveler-rowitem-static {
+
+  position : absolute; 
+  margin: 8px 0px 8px 8px;
+
+  -webkit-transform: translate3d(0px,0px,0px);
+  @include transition-property-transform-plus(opacity);
+  @include transition-duration(0.250s);
+  @include transition-timing-function(linear);
+  @include transform-origin(left center);
+  @include transition(all 250ms cubic-bezier(0.86, 0, 0.07, 1));
+  
+}
+
+
+.autoplay-shoveler-rowitem-selected {
+ 
+ 
+}
+
+/*.shoveler-subcat-bg {
+  width: 91px;
+  height: 100%;
+  margin-left: -10px;
+  display: inline-block;
+  //background-image: $img-subcat-bg;
+}*/

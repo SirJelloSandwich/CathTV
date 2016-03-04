@@ -1,0 +1,115 @@
+#signinContainer{
+	position: relative;
+	left: 28.3%;
+	top:20%;
+	width:840px;
+}
+
+.loginTitle{
+
+	font-size: 42px ;
+	font-weight:bold;
+
+	color:#ebebeb;	
+	margin-top: 0px;
+}
+
+.loginText{
+	color: white;
+	font-size: 40px;
+	margin: 0px 0px 20px 0px;
+	/*width: 50%;*/
+}
+.signUpText{
+	color: white;
+	font-size: 40px;
+	margin: 0px 0px 0px 0px;
+}
+
+.emailInput{
+	width: 100%;
+	height: 80px;
+	font-size: 40px;	
+	color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.3);
+    border: none;
+    padding-left: 20px;
+}
+
+.emailInput:focus{
+	outline:0;
+}
+
+hr{
+    margin: 100px 0 10px;
+    color: #ffffff;
+     opacity: 0.8;
+}
+
+.passwordInput{
+	margin-top: 20px;
+	width: 100%;
+	height: 80px;
+	font-size: 40px;
+	color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.3);
+    border: none;
+    padding-left: 20px;
+	
+}
+
+.passwordInput:focus{
+	outline :0;
+}
+
+#password{
+	margin-top: 20px;
+	/*display:none;*/
+}
+.emailText{
+	color: white;
+	font-size: 40px;
+}
+
+.cancelButton{
+	display: inline-block;
+    width: 400px;
+    height: 90px;
+    font-size: 38px;
+    line-height: 90px;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.3);
+    
+}
+.cancelButtonActive {
+    color: rgba(255,255,255,1.0);
+}
+
+.signupButton {
+	display: inline-block;
+    width: 400px;
+    height: 90px;
+    font-size: 38px;
+    line-height: 90px;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    background-color: #1a80aa ;
+    margin-right: 32px;
+}
+.signupButtonActive {
+    color: rgba(255,255,255,1.0);
+} 
+
+.signinButtonText{
+	text-align: center;
+	width: 400px;
+	font-size: 38px;
+	line-height: 38px;
+	color: rgba(255,255,255,0.8);
+	/*margin-left: 500px;*/
+	margin-top: 30px;
+	margin-bottom: 20px;
+    /*float: right;*/
+
+}

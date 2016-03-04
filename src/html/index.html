@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<!--
+    FLI presents FireTV
+  -->
+<html lang='en'>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <meta charset="utf-8">
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    var vp = document.getElementById('viewport');
+
+    var initialScale = Math.max(screen.width, screen.height) / 1920;
+
+    vp.setAttribute('content', 'width=device-width, initial-scale=' + initialScale + ', maximum-scale=' + initialScale, +'minimum-scale=' + initialScale);
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
+
+  <!-- build:css:dev css/fli.css -->
+  <!-- /build -->
+  <!-- build:css:dist css/fli.min.css -->
+  <!-- /build -->
+</head>
+
+<body>
+  <div id="app-container" class="app-main-container"></div>
+
+  <!-- FLI Modal Error View -->
+  <div class="fliModalError">
+    <div class="fliInnerModalError">
+      <div></div>
+    </div>
+  </div>
+
+  <!--Search View -->
+  <script id="fli-search" type="text/x-handlebars-template">
+    <div class="keyboard">
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">a</span>
+          <span class="contents-2">A</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">b</span>
+          <span class="contents-2">B</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">c</span>
+          <span class="contents-2">C</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">d</span>
+          <span class="contents-2">D</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">e</span>
+          <span class="contents-2">E</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">f</span>
+          <span class="contents-2">F</span>
+        </span>
+        <span class="key k-lg">.com</span>
+      </div>
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">g</span>
+          <span class="contents-2">G</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">h</span>
+          <span class="contents-2">H</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">i</span>
+          <span class="contents-2">I</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">j</span>
+          <span class="contents-2">J</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">k</span>
+          <span class="contents-2">K</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">l</span>
+          <span class="contents-2">L</span>
+        </span>
+        <span class="key k-lg">.net</span>
+      </div>
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">m</span>
+          <span class="contents-2">M</span>
+        </span>
+        <span class="key key-active">
+          <span class="contents-1">n</span>
+          <span class="contents-2">N</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">o</span>
+          <span class="contents-2">O</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">p</span>
+          <span class="contents-2">P</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">q</span>
+          <span class="contents-2">Q</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">r</span>
+          <span class="contents-2">R</span>
+        </span>
+        <span class="key k-lg f24">@gmail.com</span>
+      </div>
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">s</span>
+          <span class="contents-2">S</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">t</span>
+          <span class="contents-2">T</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">u</span>
+          <span class="contents-2">U</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">v</span>
+          <span class="contents-2">V</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">w</span>
+          <span class="contents-2">W</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">x</span>
+          <span class="contents-2">X</span>
+        </span>
+        <span class="key k-lg f24">@outlook.com</span>
+      </div>
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">y</span>
+          <span class="contents-2">Y</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">z</span>
+          <span class="contents-2">Z</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">1</span>
+          <span class="contents-2">+</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">2</span>
+          <span class="contents-2">-</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">3</span>
+          <span class="contents-2">_</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">4</span>
+          <span class="contents-2">%</span>
+        </span>
+        <span class="key k-lg f24">@yahoo.com</span>
+      </div>
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">5</span>
+          <span class="contents-2">:</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">6</span>
+          <span class="contents-2">;</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">7</span>
+          <span class="contents-2">(</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">8</span>
+          <span class="contents-2">)</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">9</span>
+          <span class="contents-2">{</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">0</span>
+          <span class="contents-2">}</span>
+        </span>
+        <span class="key k-lg f24">@aol.com</span>
+      </div>
+      <div class="keyboardRow">
+        <span class="key">
+          <span class="contents-1">.</span>
+          <span class="contents-2">/</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">?</span>
+          <span class="contents-2">\</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">!</span>
+          <span class="contents-2">^</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">#</span>
+          <span class="contents-2">~</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">@</span>
+          <span class="contents-2">`</span>
+        </span>
+        <span class="key">
+          <span class="contents-1">$</span>
+          <span class="contents-2">*</span>
+        </span>
+        <span class="key k-lg f24">@comcast.net</span>
+      </div>
+
+      <div class="keyboardRow">
+        <span id="delete" class="key base-key k-lg">
+          <span class="icon"></span>&nbsp;</span>
+        <span id="space" class="key base-key k-lg">&nbsp;</span>
+        <span id="letter-case" class="key base-key k-lg">
+          <span class="icon"></span>
+          <span class="contents-1">ABC</span>
+          <span class="contents-2">abc</span>
+        </span>
+        <span id="enter" class="key base-key k-lg submit">ENTER</span>
+      </div>
+    </div>
+  </script>
+
+  <!--List Screen View -->
+  <script id="listscreen-view" type="text/x-handlebars-template">
+
+    <div class="listscreenMain">
+      <div class="listscreenLogo"></div>
+
+      <div class="listscreenLeft">
+        <div class="listscreenLeftOverlay">
+          <div class="listscreenLeftOverlayText">LIVE FEED</div>
+        </div>
+      </div>
+      <div class="listscreenRight">
+        <div class="listscreenRightOverlay">
+          <div class="listscreenRightOverlayText">EXPLORE</div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+  <!--Registration View -->
+  <script id="registration-view" type="text/x-handlebars-template">
+    <div id="registrationContainer">
+
+      <div class="createAnAccountText">
+        <p class="createAccountTitle"> CREATE AN ACCOUNT</p>
+        <p class="createAccountBody"> Our Free account gives you access to all our videos plus these extra perks</p>
+        <ul class="createAccountBody" type="disc">
+          <li>Continue watching on another device</li>
+          <li>Custom watchlist</li>
+          <li>Member exclusive Live events</li>
+        </ul>
+      </div>
+
+      <div id="regEmail">
+        <input type="text" class="regEmailInput" placeholder="Email"></input>
+      </div>
+      <div id="regPassword">
+        <p class="regEmailText"></p>
+        <input type="password" class="regPasswordInput" placeholder="Password"></input>
+      </div>
+
+    </div>
+
+  </script>
+
+  <!--Sign In View -->
+  <script id="signInView" type="text/x-handlebars-template">
+    <div id="signinContainer">
+
+      <p class="loginTitle">LOGIN</p>
+      <p class="loginText">To gain access to all our videos and clips, please login to your account</p>
+      <div id="email">
+        <input type="text" name="Please enter your email address" class="emailInput" placeholder="Email"></input>
+      </div>
+
+      <div id="password">
+
+        <input type="password" name="Please enter your password" class="passwordInput" placeholder="Password"></input>
+      </div>
+
+      <hr/>
+
+      <div class="signInButtons">
+        <div class="signinButtonText">Not A Member?</div>
+        <div class="signupButton">SIGN UP NOW</div>
+        <div class="cancelButton">CANCEL</div>
+
+
+      </div>
+    </div>
+  </script>
+
+  <!--Samsung Tizen IME -->
+  <script id="tizenIME" type="text/x-handlebars-template">
+
+    <input type="text" id="ime-tizen" />
+  </script>
+
+  <!-- Continue Watching View -->
+  <script id="continueWatchingContainer" type="text/x-handlebars-template">
+    <div id="continue-watching-overlay" class="continueWatchingOverlay">
+
+      <div class="continue-watching-items">
+        <div class="continueWatchingText"> Continue watching where you left off?</div>
+        <div id="continueWatchingButtons">
+          <div class="continueButton">Continue</div>
+          <div class="restartButton">Restart from Beginning</div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <!-- Mock device linking -->
+  <div class="deviceLinkingImg"></div>
+
+  <script id="deviceLinking" type="text/x-handlebars-template">
+    <div class="deviceLinkingView">
+      <div class="dlMainTitle">LINK YOUR ACCOUNT</div>
+      <div class="dlRegText">From your computer or mobile device, go to:</div>
+      <div class="dlLink">http://www.flicast.com/link</div>
+      <div class="otherRegText">Follow the onscreen instructions and enter the following activation code to complete your registration</div>
+      <div class="dlActCode"> ACTIVATION CODE</div>
+      <div class="dlLargeWhiteBox">
+        <div class="largeBlackText">XYZ123</div>
+      </div>
+      <hr class="thin">
+      <div class="dlBelowHr">This screen will automatically update if linking your account is successful.</div>
+      <div class="upperButton">Get a New Code</div>
+      <div class="lowerButton">Cancel</div>
+    </div>
+  </script>
+
+  <!-- Overlay Fade -->
+  <div class="overlayFade"></div>
+
+  <!-- Overlay/Splash Screen for startup -->
+  <div id="app-overlay" class="app-overlay-container">
+    <div id="overlay-message" class="app-overlay-message"></div>
+  </div>
+
+  <div class="fixedFocusBorder"></div>
+  <div class="focusBorder"></div>
+
+  <!-- Black overlay for video starting -->
+  <div id="black-app-overlay" class="black-app-overlay-container">
+
+  </div>
+
+  <!-- Spinner for content load -->
+  <div id="app-loading-spinner" class="content-load-spinner">
+  </div>
+
+  <!-- Spinner for splashscreen -->
+  <div id="splashscreenSpinner" class="splashscreen-load-spinner">
+  </div>
+
+  <!-- App Header Template -->
+  <script id="app-header-template" type="text/x-handlebars-template">
+    <div class="app-top-bar">
+
+    </div>
+  </script>
+
+  <!--Landing page view -->
+  <script id="landingPage" type="text/x-handlebars-template">
+    <div id="{{main_landing_container}}">
+
+      <div class="{{landscapeImages}}">
+        <img class="largeImg" src="{{image}}">
+      </div>
+
+      <div class="landingPageLower">
+
+        {{#each button}}
+        <div class="landingPageButton">
+          <img class="genericButtonIcon" src={{icon}}>
+          <p class="genericButtonText">{{text}}</p>
+        </div>
+        {{/each}}
+
+      </div>
+
+    </div>
+  </script>
+
+  <!-- Search View Template -->
+  <script id="search-view-template" type="text/x-handlebars-template">
+
+    <div id="searchPage">
+      <input type="text" class="searchInput" placeholder="Search"></input>
+    </div>
+
+  </script>
+
+  <!-- Menu Bar View Template -->
+  <script id="menu-bar-template" type="text/x-handlebars-template">
+
+    <div class="menuBar">
+      <div class="menuBox1">Browse Videos</div>
+      <div class="menuBox2">Live Webcast</div>
+      <div class="menuBottomFocus"></div>
+    </div>
+
+  </script>
+
+  <!-- Search Row View Template -->
+  <script id="search-input-template" type="text/x-handlebars-template">
+    <input id="search-input" class="menu-bar-list-item-static menu-bar-search-box" type="text" placeholder="Search" />
+  </script>
+
+  <!-- SubCategory Template  -->
+  <script id="subcategory-view-template" type="text/x-handlebars-template">
+    <div class="subcategory-container">
+      <div class="menu-bar-list-item-static menu-bar-list-item-chosen subcat-header">
+        {{title}}
+      </div>
+    </div>
+  </script>
+
+  <!-- Grid Wrap View  -->
+  <script id="grid-wrapper" type="text/x-handlebars-template">
+    <div id="gridWrapMainWrap">
+      <div class="watchlistPageTitle">
+        WATCHLIST
+        <div class="watchlistIcon"> </div>
+      </div>
+      <div class="watchlistNumber1"></div>
+      <div class="watchlistNumber2"></div>
+      <div id="mainGridWrapper" class="gridWrapper">
+        <div class="moveableGridInternalContainer">
+          {{#each items}} {{#if hdbackgroundimageurl}} {{#if movieTitle}}
+          <div class="thumbnailContainer">
+
+            <div class="innerThumbnailContainer">
+              <img class="thumbnail" src={{hdbackgroundimageurl}}>
+
+            </div>
+            <p class="thumbnailVideoTitle">{{movieTitle}}</p>
+          </div>
+          {{/if}} {{/if}} {{/each}}
+        </div>
+      </div>
+  </script>
+
+  <!-- Grid Row View  -->
+  <script id="grid-row" type="text/x-handlebars-template">
+
+    <div id="gr" class="gridRow">
+      <div class="innerGridRow">
+        <p>CONTINUE WATCHING</p>
+        <img class="gridRowThumbnail" src="assets/poster_campaign.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_croods.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_hitchcock.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_hobbit.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_hoteltransylvania.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_ironman3.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_naturecalls.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_oblivion.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_oz.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_twilight.jpg">
+      </div>
+    </div>
+    <div id="gr" class="gridRow">
+      <div class="innerGridRow">
+        <p>NEW RELEASES</p>
+        <img class="gridRowThumbnail" src="assets/poster_campaign.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_croods.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_hitchcock.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_hobbit.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_hoteltransylvania.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_ironman3.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_naturecalls.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_oblivion.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_oz.jpg">
+        <img class="gridRowThumbnail" src="assets/poster_twilight.jpg">
+      </div>
+    </div>
+
+  </script>
+
+  <div class="springboardBgOpacity"></div>
+
+  <!-- Springboard Background -->
+  <div class="springboardBackground">
+    <img></img>
+  </div>
+
+  <!-- Springboard Template -->
+  <script id="springboard-template" type="text/x-handlebars-template">
+
+    <div class="springboardContainer">
+
+      <div class="innerSpringboardContainer">
+
+        <div id="springboardPage">
+          <div class="mainSpringboardPic">
+            {{#if image}}
+              <img class="thumbPic" src={{image.styles.medium}}>
+            {{else}}
+              <img class="thumbPic" src=assets/BT_placeholder.png>
+            {{/if}}
+          </div>
+          <div class="springboardData">
+            <p class="springboardMainTitle">{{label}}</p>
+            <div class="ratingEtc">
+
+              <span class="movieYear">
+
+              </span>
+
+              <span class="director">
+
+              </span>
+
+              <span class="movieLength">
+                 {{fliTime}}
+              </span>
+
+            </div>
+            {{#if springboardButtons}}
+            <div class="springboardRow">
+
+              <span class="springboardButton1">
+                <img class="springboardButtonIcon" src="assets/icon_40_play_fhd.png">
+                <p class="springboardButtonText">Play</p>
+              </span>
+              <!-- <span class="springboardButton2">
+                <img class="springboardButtonIcon" src="assets/icon_40_replay_fhd.png">
+                <p class="springboardButtonText">Restart</p>
+              </span> -->
+
+            </div>
+            {{/if}}
+          </div>
+          <hr>
+        </div>
+
+      </div>
+
+    </div>
+
+  </script>
+
+  <!-- Series Springboard Template -->
+  <script id="series-springboard-template" type="text/x-handlebars-template">
+
+    <div class="seriesSpringboardContainer">
+
+      <div class="seriesInnerSpringboardContainer">
+
+        <div id="seriesSpringboardPage">
+          <div class="seriesMainSpringboardPic">
+            {{#if image}}
+              <img class="seriesThumbPic" src={{image.styles.medium}}>
+            {{else}}
+              <img class="seriesThumbPic" src=assets/BT_placeholder.png>
+            {{/if}}
+          </div>
+          <div class="seriesSpringboardData">
+            <p class="seriesSpringboardMainTitle">{{label}}</p>
+            <div class="seriesRatingEtc">
+
+              <span class="seriesMovieYear">
+                Aug 14, 2015 |
+              </span>
+
+              <span class="seriesDirector">
+
+              </span>
+
+              <span class="seriesMovieLength">
+                 {{fliTime}}
+              </span>
+
+            </div>
+
+            <div class="seriesSpringboardRow">
+
+              <span class="seriesSpringboardButton1">
+                <img class="seriesSpringboardButtonIcon" src="assets/icon_40_play_fhd.png">
+                <p class="seriesSpringboardButtonText">Play</p>
+              </span>
+              <!-- <span class="seriesSpringboardButton2">
+                <img class="seriesSpringboardButtonIcon" src="assets/icon_40_replay_fhd.png">
+                <p class="seriesSpringboardButtonText">Restart</p>
+              </span> -->
+
+            </div>
+
+          </div>
+          <hr>
+        </div>
+
+      </div>
+
+    </div>
+
+  </script>
+
+  <!-- Autoplay Template -->
+  <script id="autoplay-template" type="text/x-handlebars-template">
+
+    <div class="autoplayContainer">
+      <div class="nextVideoText">Next Video</div>
+      <div class="currentVideoText">Current Video</div>
+      <div class="framerMovieTitle">FLICAST</div>
+      <div class="innerAutoplayContainer">
+
+        <div id="autoplayPage">
+          <div class="mainAutoplayPic">
+            <img class="autoplayThumbPic" src={{thumbPic}}>
+          </div>
+          <div class="autoplayData">
+            <p class="autoplayMainTitle">{{movieTitle}}</p>
+            <div class="autoplayRatingEtc">
+              <span>
+                <img class="" src={{ratingPic}}>
+              </span>
+              <span class="autoplayMovieLength">
+                {{movieLength}}
+              </span>
+              <span class="autoplayMovieYear">
+                {{movieYear}}
+              </span>
+
+              <img class="autoplayStarRating" src="assets/stars_3_fhd.png">
+              </br>
+              <span class="autoplayActors">
+                {{actors}}
+              </span>
+              <span class="autoplayDirector">
+                {{director}}
+              </span>
+            </div>
+            <p class="autoplayDescription">
+              {{description}}
+            </p>
+            <div class="autoplayRow">
+
+              <span class="autoplayButton">
+                <div class="playNextCounter">20</div>
+                <p class="autoplayButtonText">Play Next</p>
+              </span>
+              <span class="autoplayButton">
+                <img class="autoplayButtonIcon" src="assets/icon_browse_fhd.png">
+                <p class="autoplayButtonText">Browse</p>
+              </span>
+              <span class="autoplayButton">
+                <img class="autoplayButtonIcon" src="assets/icon_resume_play_fhd.png">
+                <p class="autoplayButtonText">Keep Watching</p>
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </script>
+
+  <!-- Featured View Template  -->
+  <script id="featured-template" type="text/x-handlebars-template">
+    <div class="largeBrowseContainer">
+      <div class="innerLargeBrowseContainer">
+        <div id="featured-container">
+          {{#each items}}
+            <img style="width:800px;height:400px;" id="{{@index}}" src="{{plmedia$defaultThumbnailUrl}}"></img>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+  </script>
+
+  <!-- large 3D Shoveler View Template -->
+  <script id="featured-3D-shoveler-template" type="text/x-handlebars-template">
+
+    {{#each items}}
+    <div id="{{id}}" class="featured-static ">
+    </div>
+    {{/each}}
+
+  </script>
+
+  <!-- 1D View Template  -->
+  <script id="one-D-view-items-template" type="text/x-handlebars-template">
+    <!-- <div id="one-D-view-item-elements" class="one-D-details-container">
+             <div id="one-d-no-items" class="one-d-no-items-container">No content found.</div>
+            <div id="one-D-shoveler-container"></div>
+             <div id="one-D-summary-container" class="one-D-details-summary-text">
+                <div id="summaryTitle" class="one-D-summary-title"></div>
+                 <div id="summaryDate" class="one-D-summary-pubdate"></div>
+                 <div id="summary-buttons-container"></div>
+                 <div id="summaryDesc" class="one-D-summary-description"></div>
+             </div>
+        </div> -->
+  </script>
+
+  <!-- Browse Shoveler View Template -->
+  <script id="browse-shoveler-template" type="text/x-handlebars-template">
+    <div class="browseShovelerParent">
+      <div class="browseRowIndex">7</div>
+      <div class="browseRowTotal">77</div>
+      <div class="browseShovelerLeft"></div>
+      <div class="browseShovelerRight"></div>
+      <div id="browse-shoveler-view" class="browse-shoveler-row-container">
+        <p class="browseRowTitle">{{row.rowtitle}}</p>
+        {{#each row}}
+        <div id="{{id}}" class="browse-shoveler-rowitem-static"></div>
+        {{/each}}
+
+      </div>
+    </div>
+  </script>
+
+  <!-- Springboard Shoveler View Template -->
+  <script id="springboard-shoveler-template" type="text/x-handlebars-template">
+    <div class="springboardShovelerParent">
+      <div class="springboardRowIndex">7</div>
+      <div class="springboardRowTotal">77</div>
+      <div class="springboardShovelerLeft"></div>
+      <div class="springboardShovelerRight"></div>
+      <div id="springboard-shoveler-view" class="springboard-shoveler-row-container">
+        <p class="springboardRowTitle">{{row.rowtitle}}</p>
+        {{#each row}}
+        <div id="{{id}}" class="springboard-shoveler-rowitem-static"></div>
+        {{/each}}
+
+      </div>
+    </div>
+  </script>
+
+  <!-- Autoplay Shoveler View Template -->
+  <script id="autoplay-shoveler-template" type="text/x-handlebars-template">
+    <div class="autoplayShovelerParent">
+      <div class="autoplayRowIndex">7</div>
+      <div class="autoplayRowTotal">77</div>
+      <div class="autoplayShovelerLeft"></div>
+      <div class="autoplayShovelerRight"></div>
+      <div id="autoplay-shoveler-view" class="autoplay-shoveler-row-container">
+        <p class="autoplayRowTitle">{{row.rowtitle}}</p>
+        {{#each row.items}}
+        <div id="{{id}}" class="autoplay-shoveler-rowitem-static"></div>
+        {{/each}}
+
+      </div>
+    </div>
+  </script>
+  <!-- Series Springboard Shoveler View Template -->
+  <script id="series-springboard-shoveler-template" type="text/x-handlebars-template">
+    <div class="seriesSpringboardShovelerParent">
+      <div class="seriesSpringboardRowIndex">7</div>
+      <div class="seriesSpringboardRowTotal">77</div>
+      <div class="seriesSpringboardShovelerLeft"></div>
+      <div class="seriesSpringboardShovelerRight"></div>
+      <div id="series-springboard-shoveler-view" class="series-springboard-shoveler-row-container">
+        <p class="seriesSpringboardRowTitle">{{row.rowtitle}}</p>
+        {{#each row.items}}
+        <div id="{{id}}" class="series-springboard-shoveler-rowitem-static"></div>
+        {{/each}}
+
+      </div>
+    </div>
+  </script>
+
+  <!-- Buttons View Template -->
+  <script id="button-view-template" type="text/x-handlebars-template">
+    <div class="detail-row-container-buttons">
+      {{#each items}}
+      <div id="{{id}}" class="detail-item-button-static">{{buttonValue}}</div>
+      {{/each}}
+    </div>
+  </script>
+
+  <!-- Next Video View Template  -->
+  <script id="next-video-view-template" type="text/x-handlebars-template">
+    <div id="next-video-view" class="next-video-main-container">
+      <div class="next-video-text">UP NEXT</div>
+      <div class="next-video-title">{{title}}</div>
+      <div class="next-video-description">{{description}}</div>
+      <div class="next-video-thumbnail">
+        <img src="{{thumbURL}}">
+      </div>
+      <div class="next-video-playingtext">
+        Playing in
+        <span id="next-video-starttext" class="next-video-starttext">30 </span>
+        seconds
+      </div>
+    </div>
+  </script>
+
+  <!-- Custom Controls Template -->
+  <script id="controls-view-template" type="text/x-handlebars-template">
+    <div class="player-pause-button">
+      <img class="player-pause-indicator" src="assets/btn_pause.png" />
+    </div>
+    <div class="player-controls-container">
+      <div class="player-controls-timeline-container">
+        <div class="player-controls-timeline">
+          <div class="player-controls-timeline-playhead"></div>
+        </div>
+        <div id="forward-indicator" class="player-controls-skip-indicator">
+          <img src="assets/forward-arrow.png" />
+          <span class="player-controls-skip-symbol">+</span>
+          <span class="player-controls-skip-number">10</span>
+          <span class="player-controls-skip-text">s</span>
+        </div>
+        <div id="rewind-indicator" class="player-controls-skip-indicator">
+          <img src="assets/rewind-arrow.png" />
+          <span class="player-controls-skip-symbol">-</span>
+          <span class="player-controls-skip-number">10</span>
+          <span class="player-controls-skip-text">s</span>
+        </div>
+      </div>
+      <div class="player-controls-timestamp-curtime">00:00</div>
+      <div class="player-controls-timestamp-totaltime"></div>
+      <div class="player-controls-content-title">Content Title</div>
+      <div class="player-controls-button-back">
+        <img class="player-back-button" src="assets/btn_back.png" />
+      </div>
+      <div class="player-controls-content-subtitle">Subtitle</div>
+    </div>
+  </script>
+
+  <!--Player View-->
+  <script id="fli-player-view" type="text/x-handlebars-template">
+
+    <div id="framerParent">
+      <div class="FRAMER_EXAMPLE">
+        <video crossorigin="anonymous" class="player-main-container" src="">
+          <track  label="English" kind="subtitles" srclang="en" src="" default>
+        </video>
+
+      </div>
+    </div>
+
+  </script>
+
+  <!--FLI-Custom Controls View-->
+  <script id="fli-controls-view" type="text/x-handlebars-template">
+
+    <div class="roundedEdgeControlContainer">
+
+      <div class="controlBox">
+        <div class="rw">
+
+        </div>
+        <div class="pause">
+
+        </div>
+        <div class="ff">
+
+        </div>
+
+      </div>
+      <div class="progressBox">
+        <div class="progressContainer">
+          <div class="coloredProgressContainer">
+            <div class="progressDot">
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="currentRunTimeBox">00:00:00</div>
+      <div class="forwardSlashBox">/</div>
+      <div class="totalRunTimeBox">00:00:00</div>
+      <div class="closedCaption">
+        <div class="ccIcon"></div>
+      </div>
+      <div class="ccOptions">
+        <div class="ccTop">CC On</div>
+        <div class="ccBottom">CC Off</div>
+        <div class="ccDot"></div>
+      </div>
+
+
+    </div>
+
+  </script>
+
+  <!-- Custom Live Controls Template -->
+  <script id="controls-live-view-template" type="text/x-handlebars-template">
+
+
+    //
+    <div class="time">00:00:00 / 00:00:00</div>
+    <div class="player-pause-button">
+      <img class="player-pause-indicator" src="assets/btn_pause.png" />
+    </div>
+    <div class="player-controls-container">
+      <div class="player-controls-timeline-container">
+        <div class="player-controls-timeline">
+        </div>
+      </div>
+      <div class="player-controls-timestamp-curtime">
+        <img src="assets/live.png" />
+      </div>
+      <div class="player-controls-content-title">Content Title</div>
+      <div class="player-controls-button-back">
+        <img class="player-back-button" src="assets/btn_back.png" />
+      </div>
+      <div class="player-controls-content-subtitle">Subtitle</div>
+    </div>
+  </script>
+
+  <!-- Dialog Template -->
+  <script id="dialog-template" type="text/x-handlebars-template">
+    <div class="modal-dialog">
+      <div class="dialog-title">{{title}}</div>
+      <div class="dialog-message">{{message}}</div>
+      <div class="dialog-buttons-container"></div>
+    </div>
+  </script>
+  <!--<script type="text/javascript" src="cordova.js"></script>-->
+  <!--<script src="libs/framer.js"></script>-->
+  <script src="libs/handlebars-v2.0.0.js"></script>
+  <script src="libs/jquery.js"></script>
+
+  <!-- build:js:dev js/fli.js -->
+  <!-- /build -->
+  <!-- build:js:dist js/fli.min.js -->
+  <!-- /build -->
+</body>
+
+</html>

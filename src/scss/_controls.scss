@@ -1,0 +1,180 @@
+.roundedEdgeControlContainer {
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
+  width: 1200px;
+  height: 90px;
+  background: rgba(0,0,0,0.8);
+  border-radius: 45px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0;
+  top: 930px;
+  left: 390px;
+  -webkit-transform: translate3d(0px, 200px, 0px) scale(1) scale3d(1, 1, 1) skew(0deg, 0deg) skewX(0deg) skewY(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transform-origin: 50% 50%;
+  transition: all 250ms cubic-bezier(0.755, 0.050, 0.855, 0.060);
+}
+.rw {
+  display: inline-block;
+  width: 64px;
+  height: 70px;
+  border-radius: 4px;
+  margin: 0 auto;
+  float: left;
+  background: url(../assets/player_rw_btn_fhd.png) no-repeat center center;
+}
+.progressDot {
+  position: relative;
+  top: -4px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+.play {
+  display: inline-block;
+  width: 64px;
+  height: 70px;
+  border-radius: 4px;
+  margin: 0;
+  float: left;
+  background: url(../assets/player_play_btn_fhd.png) no-repeat center center;
+}
+.pause {
+  display: inline-block;
+  width: 64px;
+  height: 70px;
+  border-radius: 4px;
+  margin: 0;
+  float: left;
+  background: url(../assets/player_pause_btn_fhd.png) no-repeat center center;
+}
+.ff {
+  display: inline-block;
+  width: 64px;
+  height: 70px;
+  border-radius: 4px;
+  margin: 0;
+  float: left;
+  background: url(../assets/player_ff_btn_fhd.png) no-repeat center center;
+}
+.controlBox {
+  display: inline-block;
+  width: 192px;
+  height: 100%;
+  position: relative;
+  left: -20px;
+  padding-top: 10px;
+}
+.progressBox {
+  display: inline-block;
+  width: 600px;
+  height: 100%;
+  position: relative;
+  left: 10px;
+}
+.currentRunTimeBox {
+  display: inline-block;
+  width: 90px;
+  color: white;
+  font-size: 24px;
+  text-align: right;
+  margin-left: 15px;
+  position: relative;
+  left: 5px;
+  bottom: 47px;
+}
+.totalRunTimeBox {
+  display: inline-block;
+  width: 100px;
+  height: 100%;
+  color: white;
+  font-size: 24px;
+  text-align: left;
+  position: relative;
+  left: 5px;
+  bottom: 47px;
+}
+.forwardSlashBox {
+  display: inline-block;
+  width: 14px;
+  color: white;
+  font-size: 24px;
+  margin: 0 10px 0 5px;
+  text-align: center;
+  position: relative;
+  left: 5px;
+  bottom: 47px;
+}
+.closedCaption {
+  display: inline-block;
+  width: 64px;
+  height: 70px;
+  border-radius: 4px;
+  background: url(../assets/player_cc_fhd.png) no-repeat 30% 58%;
+  position: relative;
+  left: 5px;
+  bottom: 20px;
+}
+.ccOptions {
+  position: relative;
+  width: 150px;
+  height: 75px;
+  background-color: rgba(0,0,0,0.8);
+  left: 1055px;
+  bottom: 275px;
+  opacity: 0;
+}
+.ccIcon {
+  background: url(../assets/icon_expand_fhd.png) no-repeat center center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  left: 45px;
+  top: 28px;
+}
+.ccTop {
+  position: relative;
+  width: 100%;
+  height: 37.5px;
+  color: white;
+  font-size: 24px;
+  line-height: 40px;
+}
+.ccBottom {
+  position: relative;
+  width: 100%;
+  height: 37.5px;
+  color: white;
+  font-size: 24px;
+  line-height: 38px;
+  font-family: Roman;
+  background-color: #ff6600;
+}
+.ccDot {
+  position: relative;
+  left: 15px;
+  top: -25px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background: #ffffff;
+}
+.progressContainer {
+  width: 100%;
+  height: 12px;
+  background: rgba(167,167,167,0.3);
+  margin-top: 29px;
+}
+.coloredProgressContainer {
+  width: 0;
+  height: 12px;
+  background: #2b59a9;
+  margin-top: 29px;
+}
+.time {
+  /*float: left;*/
+  margin: 0 auto 0 950px;
+  color: white;
+}
